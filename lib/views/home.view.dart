@@ -1,69 +1,122 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_play_all/stores/app.store.dart';
-import 'registeruser.view.dart';
-import 'login.view.dart';
+import 'perfil.search.view.dart';
+import 'home.user.view.dart';
+import 'calender.view.dart';
+import 'perfil.user.view.dart';
+import 'message.user.view.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  
+  PageController _pageController = PageController();
+
+  List<Widget> _screen = [
+    HomeUserPage(), PerfilSearchPage(), CalenderUserPage(), MessageUserPage(),PerfilUserPage(),
+  ];
+
+  int _selectedIndex = 0;
+  void _onPageChanged (int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+ 
+  }
+
+  void _onItemTapped (int selectedIndex){
+    _pageController.jumpToPage(selectedIndex);
+  }
+
   AppStore _appStore;
 
   @override
   Widget build(BuildContext context) {
     _appStore = Provider.of<AppStore>(context);
     return Scaffold(
-      body: Container(
-        color: Colors.red,
-        child: ListView(
-          children: <Widget>[
-            // container do topo da tela
-            Container(
-              width: 128,
-              height: MediaQuery.of(context).size.height * 1.0,
-              padding: EdgeInsets.only(
-                top: 60,
-                left: 40,
-                right: 40,
+      appBar: AppBar(title: Text('Principal'),),
+      body: PageView(
+        controller: _pageController,
+        children: _screen,
+        onPageChanged: _onPageChanged,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          onTap: _onItemTapped,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(
+                Icons.home,
+                color: _selectedIndex == 0 ? Colors.green : Colors.grey,
+                size: 20,
               ),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFF33691E),
-                    Color(0xFF64DD17),
-                  ],
-                ),
+              title: Text('Home', 
+                style: TextStyle(
+                  color: _selectedIndex == 0 ? Colors.green : Colors.black,
+                  fontSize: 10,
+                )
               ),
-              child: Column(children: <Widget>[
-                SizedBox(
-                  height: 128,
-                  width: 128,
-                  child: Image.asset("assets/logo_branco.png"),
-                ),
-                SizedBox(
-                  height: 60,
-                ),
-                SizedBox(
-                  height: 200,
-                  child: Text(
-                    "TELA DE HOME PAGE",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 60,
-                  child: Text(_appStore.strDisplayName),
-                ),
-              ]),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: _selectedIndex == 1 ? Colors.green : Colors.grey,
+                size: 20,
+              ),
+              title: Text('Busca',
+                  style: TextStyle(
+                    color: _selectedIndex == 1 ? Colors.green : Colors.black,
+                    fontSize: 10,
+                )
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.calendar_today,
+                color: _selectedIndex == 2 ? Colors.green : Colors.grey,
+                size: 20,
+              ),
+              title: Text('Calendario', 
+                  style: TextStyle(
+                    color: _selectedIndex == 2 ? Colors.green : Colors.black,
+                    fontSize: 10,
+                )
+              ),
+            ),
+             BottomNavigationBarItem(
+              icon: Icon(
+                Icons.message,
+                  color: _selectedIndex == 3 ? Colors.green : Colors.grey,
+                  size: 20,
+              ),
+              title: Text('Mensagem',
+                  style: TextStyle(
+                    color: _selectedIndex == 3 ? Colors.green : Colors.black,
+                    fontSize: 10,
+                )
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                  color: _selectedIndex == 4 ? Colors.green : Colors.grey,
+                  size: 20,
+              ),
+              title: Text('Perfil',
+                  style: TextStyle(
+                    color: _selectedIndex == 4 ? Colors.green : Colors.black,
+                    fontSize: 10,
+                    
+                )
+              ),
             ),
           ],
-        ),
       ),
     );
   }
 }
+

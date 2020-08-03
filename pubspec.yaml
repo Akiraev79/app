@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^0.12.0+4
+  google_fonts: ^1.1.0
   fluttertoast: ^4.0.0
   mobx:
   flutter_mobx:
@@ -28,6 +29,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_svg: ^0.17.4 # it help us to use "arquivo.SVG"
 
 dev_dependencies:
   flutter_test:
@@ -92,4 +94,25 @@ flutter:
     - assets/logo_verde_128x.png
     - assets/logo_verde_256x.png
     - assets/logo_verde.png
-
+    - assets/calendar.svg
+    - assets/home.svg
+    - assets/locked.svg
+    - assets/lockscreen.svg
+    - assets/map-location.svg
+    - assets/menu.svg
+    - assets/more.svg
+    - assets/notification.svg
+    - assets/photo-camera.svg
+    - assets/placeholder.svg
+    - assets/placeholders.svg
+    - assets/plus.svg
+    - assets/save.svg
+    - assets/search.svg
+    - assets/settings.svg
+    - assets/smartmessage.svg
+    - assets/smartperfil.svg
+    - assets/star.svg
+    - assets/trash.svg
+    - assets/unlocked.svg
+    - assets/unlockscreen.svg
+    - assets/user.svg
