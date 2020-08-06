@@ -52,7 +52,7 @@ class _PerfilSearchPageState extends State<PerfilSearchPage> {
                 SizedBox(
                   height: 200,
                   child: Text(
-                    "TELA DE PERFIL",
+                    "TELA DE BUSCA DE NOVOS JOGADORES",
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w500,

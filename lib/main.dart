@@ -21,16 +21,14 @@ class MyApp extends StatelessWidget with PortraitModeMixin {
           ],
           child: MaterialApp(
             theme: ThemeData(
-              scaffoldBackgroundColor: Colors.white,
               textTheme: GoogleFonts.dmSansTextTheme(),
               visualDensity: VisualDensity.adaptivePlatformDensity,
               appBarTheme: AppBarTheme(
-                color: Colors.transparent,
                 elevation: 0,
               ),
             ),
         debugShowCheckedModeBanner: false,
-        home: WelcomePage(),
+        home: HomePage(),
       ),
     );
   }

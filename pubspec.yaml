@@ -33,7 +33,7 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
+    sdk: flutter 
   mobx_codegen:
   build_runner:
 
