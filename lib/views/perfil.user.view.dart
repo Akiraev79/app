@@ -10,19 +10,18 @@ class PerfilUserPage extends StatefulWidget {
 class _PerfilUserPageState extends State<PerfilUserPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       
-        child: ListView(
-          children: <Widget>[
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Color(0xFF33691E),
+        // Colocar neste titulo o nome do usuario depois do "Ola, ""
+        title: Text("Perfil do Usuario", style: TextStyle(fontSize: 15),),
+      ),
+       body: Container(
             // container do topo da tela
-            Container(
-              width: 128,
+            
+              width: MediaQuery.of(context).size.width * 1.0,
               height: MediaQuery.of(context).size.height * 1.0,
-              padding: EdgeInsets.only(
-                top: 60,
-                left: 40,
-                right: 40,
-              ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -34,34 +33,66 @@ class _PerfilUserPageState extends State<PerfilUserPage> {
                   ],
                 ),
               ),
-              child: Column(children: <Widget>[
-                SizedBox(
-                  height: 128,
-                  width: 128,
-                  child: Image.asset("assets/logo_branco.png"),
-                ),
-                SizedBox(
-                  height: 60,
-                ),
-                SizedBox(
-                  height: 200,
-                  child: Text(
-                    "Perfil do usuario",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container( 
+                        height: MediaQuery.of(context).size.height * 0.1,
+                        width:  MediaQuery.of(context).size.width * 0.3,
+                        child:Center(
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.grey[400],
+                              foregroundColor: Colors.black,
+                              backgroundImage: NetworkImage("http://i.pravatar.cc/300"),
+                              radius: 30,                   
+                            ),
+                          )
+                        ),
+                      ),
+                      Container(
+                        width:  MediaQuery.of(context).size.width * 0.7,
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[  
+                                Text('Evandro Souza Santos', style: TextStyle(fontSize:18, color: Colors.white),),
+                              ],
+                            )
+                          ],
+                        ) 
+                      ),    
+                    ],
+                  ),
+                Container(
+                  color: Colors.white,
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  width: MediaQuery.of(context).size.width * 1.0,
+                  child: Column(
+                    children: <Widget>[
+                      
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 60,
-                  //child: Text(_appStore.strDisplayName),
+                Container(
+                  color: Colors.orange,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  width: MediaQuery.of(context).size.width * 1.0,
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.1,
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
+                  ),
                 ),
-              ]),
-            ),
-          ],
-        ),
+              ]
+         ),
+      ), 
     );
   }
 }

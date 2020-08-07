@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget with PortraitModeMixin {
             theme: ThemeData(
               textTheme: GoogleFonts.dmSansTextTheme(),
               visualDensity: VisualDensity.adaptivePlatformDensity,
+              primaryColor: Colors.green[800],
               appBarTheme: AppBarTheme(
                 elevation: 0,
               ),
