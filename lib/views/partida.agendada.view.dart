@@ -26,19 +26,19 @@ class _PartidaAgendadaPageState extends State<PartidaAgendadaPage> {
                 child: Column(
                   children: <Widget>[   
                     Row(children: <Widget>[
+                   
                       Container( 
-                        height: 120,
-                         width:  MediaQuery.of(context).size.width * 0.3,
-                         child: ListTile(
-                            
+                        height: 80,
+                        width:  MediaQuery.of(context).size.width * 0.3,
+                        padding: EdgeInsets.only(top: 10,),
+                        child: ListTile(
                             leading: CircleAvatar(
-                            
                               backgroundColor: Colors.grey[400],
                               foregroundColor: Colors.black,
                               backgroundImage: NetworkImage("http://i.pravatar.cc/300"),
                               radius: 30.0,                   
                             ),
-                         ) 
+                        ) 
                       ),
                       Container(
                         width:  MediaQuery.of(context).size.width * 0.6,

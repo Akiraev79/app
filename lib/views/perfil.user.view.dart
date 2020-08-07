@@ -71,7 +71,7 @@ class _PerfilUserPageState extends State<PerfilUserPage> {
                   width: MediaQuery.of(context).size.width * 1.0,
                   child: Column(
                     children: <Widget>[
-                      
+        
                     ],
                   ),
                 ),

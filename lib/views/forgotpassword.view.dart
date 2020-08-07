@@ -154,7 +154,7 @@ class ForgotPassword extends StatelessWidget {
                         ),
                         onPressed: () {
                           // colocar o código que manda a solicitação do link
-
+                          
                           // Abre a pagina para digitar o código recebido no link
                           Navigator.push(
                             context,
